@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>My form</h1>
+  <form>
+
+    <app-input [name]="'Name'" [id]="'name'" (inputValue)="setName($event)"></app-input>
+    <app-input [name]="'Surname'" [id]="'surname'" (inputValue)="setSurname($event)"></app-input>
+    <app-input [name]="'Product id'" [id]="'product-id'" (inputValue)="setProductId($event)"></app-input>
+
+    <button (click)="doDaJob()" class="btn btn-success">Submit</button>
+
+  </form>
+</div>
