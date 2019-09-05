@@ -7,3 +7,5 @@ export const PRODUCTS: Product[] = [
     { id: '4', name: 'Tulip', description: 'not only on spring time'},
     { id: '5', name: 'Lilies', description: 'red, white and other colors available'},
 ];
+
+export const PRODUCT_IDS: string[] = PRODUCTS.map( product => product.id );

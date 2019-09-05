@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ListItem } from '../_models/list-item';
+import { ListDataService } from '../_services/list-data.service';
 
 @Component({
   selector: 'app-list-page',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListPageComponent implements OnInit {
 
-  constructor() { }
+  items: ListItem[];
+
+  constructor(private listDataService: ListDataService) { }
 
   ngOnInit() {
+    this.listDataService.getListData().subscribe(res => this.items = res);
   }
 
 }

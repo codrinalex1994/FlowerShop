@@ -11,6 +11,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormComponent } from './form-page/form/form.component';
 import { InputComponent } from './form-page/form/input/input.component';
 import { ProductsDataService } from './_services/products-data.service';
+import { ListDataService } from './_services/list-data.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProductsDataService } from './_services/products-data.service';
     FormsModule
   ],
   providers: [
-    ProductsDataService
+    ProductsDataService,
+    ListDataService
   ],
   bootstrap: [AppComponent]
 })

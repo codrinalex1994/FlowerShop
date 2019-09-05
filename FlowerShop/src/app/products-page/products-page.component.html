@@ -1,3 +1,14 @@
-<p>
-  products-page works!
-</p>
+<h2>Products available</h2>
+
+<table>
+  <tr>
+    <th>Product id</th>
+    <th>Product name</th>
+    <th>Product description</th>
+  </tr>
+  <tr *ngFor="let product of products">
+    <td>{{product.id}}</td>
+    <td>{{product.name}}</td>
+    <td>{{product.description}}</td>
+  </tr>
+</table>
