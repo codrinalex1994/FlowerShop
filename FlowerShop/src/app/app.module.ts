@@ -12,6 +12,7 @@ import { FormComponent } from './form-page/form/form.component';
 import { InputComponent } from './form-page/form/input/input.component';
 import { ProductsDataService } from './_services/products-data.service';
 import { ListDataService } from './_services/list-data.service';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ListDataService } from './_services/list-data.service';
     ListPageComponent,
     NavBarComponent,
     FormComponent,
-    InputComponent
+    InputComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

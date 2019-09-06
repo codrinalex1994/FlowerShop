@@ -19,24 +19,24 @@ export class FormComponent implements OnInit {
     this.productsDataService.getProductIds().subscribe(res => this.productIds = res);
   }
 
-  setName(name) {
+  setName(name: string) {
     this.listItem.name = name;
   }
 
-  setSurname(surname) {
+  setSurname(surname: string) {
     this.listItem.surname = surname;
   }
 
-  setProductId(productId) {
+  setProductId(productId: string) {
     this.listItem.productId = productId;
   }
 
   doDaJob() {
-    if(this.checkEmptyFields()){
+    if(this.areEmptyFields()){
       alert("All fields are mandatory!");
       return;
     }
-    if(!this.checkProductId(this.listItem.productId)) {
+    if(!this.isProductIdInTheList(this.listItem.productId)) {
       alert("Product id does not exist. Check products tab for the product id.");
       return;
     }
@@ -44,17 +44,11 @@ export class FormComponent implements OnInit {
     alert("Form submitted.");
   }
 
-  checkEmptyFields() {
-    if(this.listItem.name == '' || this.listItem.surname == '' || this.listItem.productId == ''){
-      return 1;
-    }
-    return 0;
+  areEmptyFields(): boolean {
+    return this.listItem.name == '' || this.listItem.surname == '' || this.listItem.productId == '';
   }
 
-  checkProductId(productId) {
-    if(this.productIds.indexOf(productId) > -1) {
-      return 1;
-    }
-    return 0;
+  isProductIdInTheList(productId: string): boolean {
+    return this.productIds.indexOf(productId) > -1;
   }
 }
