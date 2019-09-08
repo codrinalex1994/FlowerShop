@@ -4,9 +4,20 @@
 
     <app-input [name]="'Name'" [id]="'name'" (inputValue)="setName($event)"></app-input>
     <app-input [name]="'Surname'" [id]="'surname'" (inputValue)="setSurname($event)"></app-input>
-    <app-input [name]="'Product id'" [id]="'product-id'" (inputValue)="setProductId($event)"></app-input>
+    <!--<app-input [name]="'Product id'" [id]="'product-id'" (inputValue)="setProductId($event)"></app-input>
+    -->
+    <div class="form-group">
+      <label>Product id</label>
+      <select (change)="onSelectProductId($event.target.value)" class="form-control">
+        <option disabled selected value> -- select a product -- </option>
+        <option *ngFor="let productId of productIds" value="{{productId}}">{{productId}}</option>
+      </select>
+    </div>
 
     <button (click)="doDaJob()" class="btn btn-success">Submit</button>
+    
+    <p *ngIf="listItem.productId">Product name: {{listItem.productId | productpipe:'name'}}</p>
+    <p *ngIf="listItem.productId">Product description: {{listItem.productId | productpipe:'description'}}</p>
 
   </form>
 </div>

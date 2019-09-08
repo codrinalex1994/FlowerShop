@@ -13,6 +13,8 @@ import { InputComponent } from './form-page/form/input/input.component';
 import { ProductsDataService } from './_services/products-data.service';
 import { ListDataService } from './_services/list-data.service';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProductPipe } from './_pipes/product-pipe';
+import { ProductsDetailComponent } from './products-page/products-detail/products-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NavBarComponent,
     FormComponent,
     InputComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProductPipe,
+    ProductsDetailComponent
   ],
   imports: [
     BrowserModule,

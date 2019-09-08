@@ -6,9 +6,11 @@
     <th>Product name</th>
     <th>Product description</th>
   </tr>
-  <tr *ngFor="let product of products">
+  <tr *ngFor="let product of products" [routerLink]="[product.id]" style="cursor: pointer">
     <td>{{product.id}}</td>
     <td>{{product.name}}</td>
     <td>{{product.description}}</td>
   </tr>
 </table>
+
+<router-outlet></router-outlet>

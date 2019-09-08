@@ -1,0 +1,22 @@
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{{product?.img_url}}" style="width:100%">
+      <img src="https://via.placeholder.com/300" *ngIf="!product?.img_url">
+      <div class="container">
+        <h4><b>{{product?.name}}</b></h4>
+        <p>{{product?.description}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h4><b>{{specie?.type}}</b></h4>
+        <p>Sun needs: {{specie?.sunNeeds}}</p>
+        <p>Soil needs: {{specie?.soilNeeds}}</p>
+        <p>Blooms in: {{specie?.bloomsIn}}</p>
+      </div>
+    </div>
+  </div>
+</div>

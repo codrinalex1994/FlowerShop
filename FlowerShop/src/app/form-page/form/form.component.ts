@@ -51,4 +51,8 @@ export class FormComponent implements OnInit {
   isProductIdInTheList(productId: string): boolean {
     return this.productIds.indexOf(productId) > -1;
   }
+
+  onSelectProductId(productId) {
+    this.setProductId(productId);
+  }
 }

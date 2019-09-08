@@ -17,4 +17,13 @@ export class ListPageComponent implements OnInit {
     this.listDataService.getListData().subscribe(res => this.items = res);
   }
 
+  mouseEnter(e) {
+    e.target.children[0].style.visibility = 'visible';
+    e.target.children[0].style.opacity = '1';
+  }
+
+  mouseLeave(e) {
+    e.target.children[0].style.visibility = 'invisible';
+    e.target.children[0].style.opacity = '0';  
+  }
 }

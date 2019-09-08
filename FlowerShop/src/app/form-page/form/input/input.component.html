@@ -1,4 +1,6 @@
 <div class="form-group">
-    <label for="{{id}}">{{name}}</label>
-    <input [(ngModel)]="tempValue" (ngModelChange)="modelChanged($event)" type="text" class="form-control" id="{{id}}">
-  </div>
+  <label for="{{id}}">{{name}}</label>
+  <input [(ngModel)]="tempValue" (ngModelChange)="modelChanged($event)" type="text" class="form-control" id="{{id}}" (focus)="hint.style.visibility = 'visible'" 
+  (blur)="hint.style.visibility = 'hidden'">
+  <p #hint style="visibility: hidden"><b>Hint:</b> Insert anything!</p>
+</div>

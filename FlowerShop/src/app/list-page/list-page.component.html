@@ -9,6 +9,8 @@
   <tr *ngFor="let item of items">
     <td>{{item.name}}</td>
     <td>{{item.surname}}</td>
-    <td>{{item.productId}}</td>
+    <td class="td-tooltip" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">{{item.productId}}
+      <span class="td-tooltiptext"><p>Product name: {{item.productId | productpipe:'name'}}</p><p>Product description: {{item.productId | productpipe:'description'}}</p></span>
+    </td>
   </tr>
 </table>

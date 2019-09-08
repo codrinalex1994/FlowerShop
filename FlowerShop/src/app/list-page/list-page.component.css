@@ -1,15 +1,61 @@
 table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
   
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
   
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* Tooltip container */
+.td-tooltip {
+  position: relative;
+}
+
+/* Tooltip text */
+.td-tooltip .td-tooltiptext {
+  visibility: hidden;
+  width: 220px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -110px;
+
+  /* Fade in tooltip */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Tooltip arrow */
+.td-tooltip .td-tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+/*.td-tooltip:hover .td-tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+*/
