@@ -14,10 +14,22 @@
       </select>
     </div>
 
+    <div class="form-group">
+      <label>Type</label>
+      <select (change)="onSelectSpecieType($event.target.value)" class="form-control">
+        <option disabled selected value> -- select a specie -- </option>
+        <option *ngFor="let type of types" value="{{type}}">{{type}}</option>
+      </select>
+    </div>
+
     <button (click)="doDaJob()" class="btn btn-success">Submit</button>
     
     <p *ngIf="listItem.productId">Product name: {{listItem.productId | productpipe:'name'}}</p>
     <p *ngIf="listItem.productId">Product description: {{listItem.productId | productpipe:'description'}}</p>
-
+    <br/>
+    <p *ngIf="specie">Specie: {{specie.specie}}</p>
+    <p *ngIf="specie">Sun needs: {{specie.sunNeeds}}</p>
+    <p *ngIf="specie">Soil needs: {{specie.soilNeeds}}</p>
+    <p *ngIf="specie">Blooms in: {{specie.bloomsIn}}</p>
   </form>
 </div>

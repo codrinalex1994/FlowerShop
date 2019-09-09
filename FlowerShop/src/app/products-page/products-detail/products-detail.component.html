@@ -12,7 +12,11 @@
   <div class="column">
     <div class="card">
       <div class="container">
-        <h4><b>{{specie?.type}}</b></h4>
+        <label>Product type:</label>
+        <select (change)="onSelectType($event.target.value)">
+          <option disabled selected value> -- select a type -- </option>
+          <option *ngFor="let type of types" value="{{type}}">{{type}}</option>
+        </select>
         <p>Sun needs: {{specie?.sunNeeds}}</p>
         <p>Soil needs: {{specie?.soilNeeds}}</p>
         <p>Blooms in: {{specie?.bloomsIn}}</p>

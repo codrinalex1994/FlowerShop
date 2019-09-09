@@ -9,8 +9,8 @@ export class ListDataService {
     subject = new Subject<ListItem>();
 
     ListData: ListItem[] = [
-        {name:'asd', surname: 'asd', productId:'2'},
-        {name:'afgh', surname: 'sdf', productId:'4'}
+        {name:'asd', surname: 'asd', productId:'1', type:'red-rose'},
+        {name:'afgh', surname: 'sdf', productId:'3', type: 'moonflower'}
     ];
 
     constructor() {
@@ -18,7 +18,6 @@ export class ListDataService {
             next: (value) => this.ListData.push(value)
         });
     }
-
 
     addListItem(listItem: ListItem) {
         this.subject.next(listItem);

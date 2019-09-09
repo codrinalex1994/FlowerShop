@@ -15,6 +15,7 @@ export class ProductsDetailComponent implements OnInit {
   private sub: any;
   product: Product;
   specie: Specie;
+  types: string[];
 
   constructor(private route: ActivatedRoute, private productsDataService: ProductsDataService) { }
 
@@ -23,13 +24,18 @@ export class ProductsDetailComponent implements OnInit {
       this.productId = params['productId'];
       this.productsDataService.getProductById(this.productId).subscribe(res => {
         this.product = res;
-        this.productsDataService.getProductTypeSpecie(this.product.type).subscribe(res => this.specie = res);
+        this.specie = undefined;
+        this.productsDataService.getSpecieTypes(this.product.specie).subscribe(res => this.types = res);
       });
     });
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  onSelectType(type: string) {
+    this.productsDataService.getProductTypeSpecie(type).subscribe(res => this.specie = res);
   }
 
 }

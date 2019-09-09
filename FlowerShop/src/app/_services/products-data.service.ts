@@ -3,7 +3,7 @@ import { PRODUCTS, PRODUCT_IDS } from '../_mock-data/mock-products';
 import { Product } from '../_models/product';
 import { of, Observable } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { SPECIES } from '../_mock-data/mock-species';
+import { SPECIES, SPECIE_TYPES } from '../_mock-data/mock-species';
 import { Specie } from '../_models/specie';
 
 @Injectable()
@@ -27,7 +27,8 @@ export class ProductsDataService {
         return of(SPECIES.filter(specie => specie.type == productType)[0]).pipe(delay(200));
     }
 
-    getSpecieTypes(productSpecie: string): Observable<Specie[]> {
-        return of(SPECIES.filter(specie => specie.specie == productSpecie)).pipe(delay(200));
+    getSpecieTypes(productSpecie: string): Observable<string[]> {
+        return of(SPECIE_TYPES.filter(specie => specie.specie == productSpecie).map(specie_type => specie_type.type)).pipe(delay(200));
     }
+
 }

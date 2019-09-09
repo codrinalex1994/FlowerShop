@@ -4,5 +4,4 @@ export interface Product {
     description: string;
     img_url?: string;
     specie: string;
-    type: string;
 }
