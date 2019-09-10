@@ -31,4 +31,8 @@ export class ProductsDataService {
         return of(SPECIE_TYPES.filter(specie => specie.specie == productSpecie).map(specie_type => specie_type.type)).pipe(delay(200));
     }
 
+    async getProductTypeSpecie2(productType: string): Promise<Specie> {
+        return of(SPECIES.filter(specie => specie.type == productType)[0]).toPromise();
+    }
+
 }

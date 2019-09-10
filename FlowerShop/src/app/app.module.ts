@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +15,8 @@ import { ListDataService } from './_services/list-data.service';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProductPipe } from './_pipes/product-pipe';
 import { ProductsDetailComponent } from './products-page/products-detail/products-detail.component';
+import { SpeciePipe } from './_pipes/specie-pipe';
+import { ReactiveInputComponent } from './reactive-input/reactive-input.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,15 @@ import { ProductsDetailComponent } from './products-page/products-detail/product
     InputComponent,
     NotFoundComponent,
     ProductPipe,
-    ProductsDetailComponent
+    ProductsDetailComponent,
+    SpeciePipe,
+    ReactiveInputComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     ProductsDataService,

@@ -3,6 +3,7 @@ import { ListItem } from 'src/app/_models/list-item';
 import { ProductsDataService } from 'src/app/_services/products-data.service';
 import { ListDataService } from 'src/app/_services/list-data.service';
 import { Specie } from 'src/app/_models/specie';
+import { FormControl, Validators, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -16,10 +17,17 @@ export class FormComponent implements OnInit {
   types: string[];
   specie: Specie;
 
+  eduardGroup: FormGroup;
+  eduardWasHere: FormControl;
+
   constructor(private productsDataService: ProductsDataService, private listDataService: ListDataService) { }
 
   ngOnInit() {
     this.productsDataService.getProductIds().subscribe(res => this.productIds = res);
+
+    this.eduardGroup = new FormGroup({
+      eduardWasHere: new FormControl('vasdasdsada', Validators.required)
+    });
   }
 
   setName(name: string) {
@@ -39,16 +47,17 @@ export class FormComponent implements OnInit {
   }
 
   doDaJob() {
-    if(this.areEmptyFields()){
-      alert("All fields are mandatory!");
-      return;
-    }
-    if(!this.isProductIdInTheList(this.listItem.productId)) {
-      alert("Product id does not exist. Check products tab for the product id.");
-      return;
-    }
-    this.listDataService.addListItem(this.listItem);
-    alert("Form submitted.");
+    console.log(this.eduardGroup.);
+    // if(this.areEmptyFields()){
+    //   alert("All fields are mandatory!");
+    //   return;
+    // }
+    // if(!this.isProductIdInTheList(this.listItem.productId)) {
+    //   alert("Product id does not exist. Check products tab for the product id.");
+    //   return;
+    // }
+    // this.listDataService.addListItem(this.listItem);
+    // alert("Form submitted.");
   }
 
   areEmptyFields(): boolean {

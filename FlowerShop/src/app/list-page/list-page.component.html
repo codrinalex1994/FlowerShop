@@ -14,7 +14,7 @@
       <span class="td-tooltiptext"><p>Product name: {{item.productId | productpipe:'name'}}</p><p>Product description: {{item.productId | productpipe:'description'}}</p></span>
     </td>
     <td class="td-tooltip" (mouseenter)="mouseEnter($event)" (mouseleave)="mouseLeave($event)">{{item.type}}
-        <span class="td-tooltiptext"><p>Product name: {{item.productId | productpipe:'name'}}</p><p>Product description: {{item.productId | productpipe:'description'}}</p></span>
+        <span class="td-tooltiptext"><p>Sun needs: {{item.type | speciepipe:'sunNeeds' | async}}</p><p>Soil needs: {{item.type | speciepipe:'soilNeeds' | async}}</p></span>
       </td>
   </tr>
 </table>

@@ -17,7 +17,7 @@
     <div class="form-group">
       <label>Type</label>
       <select (change)="onSelectSpecieType($event.target.value)" class="form-control">
-        <option disabled selected value> -- select a specie -- </option>
+        <option selected value> -- select a specie -- </option>
         <option *ngFor="let type of types" value="{{type}}">{{type}}</option>
       </select>
     </div>
@@ -31,5 +31,12 @@
     <p *ngIf="specie">Sun needs: {{specie.sunNeeds}}</p>
     <p *ngIf="specie">Soil needs: {{specie.soilNeeds}}</p>
     <p *ngIf="specie">Blooms in: {{specie.bloomsIn}}</p>
+
+    <form [formGroup]="eduardGroup">
+      <app-reactive-input formControlName="eduardWasHere"></app-reactive-input>  
+      <p *ngIf="eduardGroup.get('eduardWasHere').errors">
+        required
+      </p>
+    </form>
   </form>
 </div>
